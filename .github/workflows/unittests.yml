@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-down-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Check out repository code
