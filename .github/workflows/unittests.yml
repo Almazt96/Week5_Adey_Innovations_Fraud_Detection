@@ -1,1 +1,32 @@
 # Configuration for automated testing
+name: Run Unit Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-down-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11' # Change to your preferred Python version
+        cache: 'pip'           # Caches pip dependencies to speed up subsequent runs
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # If using standard testing tools, ensure they are installed
+        pip install pytest pytest-cov
+
+    - name: Run Unit Tests with unittest
+      run: python -m unittest discover tests
