@@ -48,3 +48,7 @@ The repository is structured to follow a production-grade machine learning lifec
   * Implements stratified training splits, runs parameterized baselines (Logistic Regression), trains tuned XGBoost architectures, evaluates metrics under extreme class imbalance, and persists artifacts to the `models/` directory.
 * **`04_Model_Explainability.ipynb` (Interpretability & Insights)**
   * Deploys SHAP and LIME frameworks to map feature importances and explain why specific transactions were flagged as fraud.
+
+Model Insights:
+Global Importance: "The SHAP summary plot indicates that Feature_A has the highest impact on model predictions. High values of Feature_A push the model toward a positive prediction, which aligns with our domain hypothesis."
+Non-linear Relationships: "The dependence plot for Feature_A reveals a non-linear threshold at $X = 50$, after which the impact on the target variable plateaus."
