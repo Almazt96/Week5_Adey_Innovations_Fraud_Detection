@@ -1,7 +1,7 @@
 # Local challenge asset blocks
 data/raw/
 data/processed/
-models/
+# models/
 .pytest_cache/
 __pycache__/
 *.pyc
